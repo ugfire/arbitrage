@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arbitrage Investments ltd</title>
+
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css" />
+
+    <link rel="stylesheet" href="css/carousel.css" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <script src="js/script.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="img/logo.jpg" alt="" class="img-fluid"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="buy.html">Buy</a>
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="sell.html">Sell</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="contact" onclick="contact()">Contact</a>
+            </li>
+          </ul>
+
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            function contact() {
+              Swal.fire({
+                html: `
+          <h2 class="gtitle">Contact Support</h2>
+          <div class="m-1">
+            <img src="images/support.png" class="img-fluid" width="200px">
+            <div class="m-2">
+            <p class="text-dark">+256 708531101 <br> +256 781050759 </p>
+              
+              <button class="btn-success d-none btn-lg m-2 btn w-50 text-center" onclick="Login()"><i class="fa-brands fa-whatsapp"></i>Send Whatsapp</button>
+            </div>
+          </div>
+        `,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                showCloseButton: true,
+                showConfirmButton: false,
+                icon: "none",
+              });
+            }
+          </script>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-gradient-primary text-white text-center">
+      <div class="container">
+        <h1 class="display-5 text-light font-weight-bold py-5">
+          Buy or Sell a Business
+        </h1>
+        <p class="pb-5 lead">Create an account to start</p>
+      </div>
+    </header>
+
+    <!-- Testimonials Section -->
+
+    <!-- Featured Businesses Section -->
+    <section class="testimonials py-5">
+      <div class="row text-center">
+        <div class="col-xl-4 col-md-6 mb-4 text-center"></div>
+
+        <div class="col-xl-4 col-md-6 mb-4 text-center">
+          <div class="h-100 m-3">
+            <div class="">
+              <form class="form">
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  class="form-control mb-3 text-center border-dark"
+                  required />
+
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  class="form-control mb-3 text-center border-dark"
+                  required />
+
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  name="Phone"
+                  class="form-control mb-3 text-center border-dark"
+                  required />
+
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  class="form-control mb-3 text-center border-dark"
+                  required />
+
+                <input
+                  type="password"
+                  placeholder="Repeat Password"
+                  name="password2"
+                  class="form-control mb-3 text-center border-dark"
+                  required />
+
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <button
+                  class="btn w-50 btn-danger btn mb-5"
+                  onclick="createaccess()">
+                  Create an account
+                </button>
+                <script>
+                  function createaccess() {
+                    Swal.fire({
+                      icon: "error",
+                      title: "Denied",
+                      text: "Failed to create new account.",
+                      showConfirmButton: true,
+                    });
+                  }
+                </script>
+              </form>
+              <p class="text-center py-1">
+                <a href="login.html">Login instead</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4 text-center"></div>
+      </div>
+    </section>
+
+    <footer class="footer bg-light text-dark">
+      <div class="container" id="contact">
+        <div class="row">
+          <div class="col-md-6 py-3 my-3">
+            <h5 class="text-primary font-weight-bold">Contact Support</h5>
+            <p>Arbitrage Investments ltd</p>
+            <p class="text-dark">
+              +256 708531101 <br />
+              +256 781050759
+            </p>
+          </div>
+
+          <div class="col-md-6 py-3 my-3">
+            <h2 class="text-dark">Join our Newsletter</h2>
+            <form action="">
+              <input
+                type="text"
+                placeholder="Your email"
+                class="form-control mb-3" />
+              <input type="submit" class="btn btn-danger btn" />
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2023 Arbitrage Investments ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+.bg-image {
+  background-image: url("images/businessman.jpg");
+  background-size: cover;
+  background-position: center;
+}

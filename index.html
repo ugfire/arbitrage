@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arbitrage Investments ltd</title>
+
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css" />
+
+    <link rel="stylesheet" href="css/carousel.css" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <script src="js/script.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="img/logo.jpg" alt="" class="img-fluid"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="buy.html">Buy</a>
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link" href="sell.html">Sell</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="contact" onclick="contact()">Contact</a>
+            </li>
+          </ul>
+
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            function contact() {
+              Swal.fire({
+                html: `
+          <h2 class="gtitle">Contact Support</h2>
+          <div class="m-1">
+            <img src="images/support.png" class="img-fluid" width="200px">
+            <div class="m-2">
+            <p class="text-dark">+256 708531101 <br> +256 781050759 </p>
+              
+              <button class="btn-success d-none btn-lg m-2 btn w-50 text-center" onclick="Login()"><i class="fa-brands fa-whatsapp"></i>Send Whatsapp</button>
+            </div>
+          </div>
+        `,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                showCloseButton: true,
+                showConfirmButton: false,
+                icon: "none",
+              });
+            }
+          </script>
+        </div>
+      </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          Swal.fire({
+            html: `
+    
+          <h2 class="gtitle">Get started</h2>
+                 <div class="m-1">
+                  <img src="images/businessman.jpg" class="img-fluid" width="320px">
+    
+                  
+                  <div class="m-2">
+                    <button class="btn-danger btn-lg m-2 btn w-50 text-center" onclick="Create()">Create new account</button>
+                    <button class="btn-primary btn-lg m-2 btn w-50 text-center" onclick="Login()">Login</button>
+    
+                    </div>
+                  
+                  </div>
+                `,
+            timer: 15000, // Popup will close after 5 seconds
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+            showCloseButton: true,
+            showConfirmButton: false,
+            icon: "none",
+          });
+        }, 15000); // Delay the popup for 30 seconds (30000 milliseconds)
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <header class="hero bg-gradient-danger text-white text-center">
+      <div class="container">
+        <h1 class="display-2 font-weight-bold py-5">Buy or Sell a Business</h1>
+        <p class="lead">
+          Are you an enterpreneur? Would you like to buy a business, or to sell
+          your business?<br />
+          <span class="font-weight-bold">
+            www.aabitrage.com is a certified and censored global platform that
+            you can trust!</span
+          >
+        </p>
+        <p class="text-center">No fake accounts, No fake businesses!</p>
+        <div class="pb-5">
+          <a class="btn btn-success mr-3 btn-lg" onclick="Create()"
+            >Create new account</a
+          >
+          <a class="btn btn-light btn-lg pl-2 pr-2" onclick="Login()">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Testimonials Section -->
+
+    <!-- Featured Businesses Section -->
+    <section class="testimonials py-5">
+      <h2 class="text-dark font-weight-bold text-center">
+        Featured Businesses
+      </h2>
+      <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    Banking
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Foreign Exchange Shop
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/budget.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    Building & Construction
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Hardware Shop
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/tools.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    Food & Nutrition
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Urban Restaurant
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/cooking.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    Education
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Kindergarten school
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/school2.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-3 text-center">
+        <a class="btn btn-lg btn-warning" onclick="Login()">See more</a>
+      </div>
+    </section>
+
+    <!------------------why us?------------------->
+    <section class="testimonials py-5">
+      <h2 class="text-dark font-weight-bold text-center">Why trust us?</h2>
+      <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                    Regulated by Bank of Uganda & URA
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Certified
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/certified.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                    Strong updated cyber security
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Secure process
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/security.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                    Connect with Buyers and sellers from allover the world
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Robust Network
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/process.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card shadow h-100 m-3">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                    All accounts and businesses are pre-approved
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    Authentic
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <img
+                    src="images/approved.png"
+                    alt=""
+                    class="img-fluid p-3 w-50" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call-to-Action Section -->
+    <section class="cta py-5 bg-light">
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p class="lead">
+          Create an account today and explore the business opportunities waiting
+          for you.
+        </p>
+        <a class="btn btn-primary btn-lg" onclick="Create()">Sign Up</a>
+      </div>
+    </section>
+    <!-- Bootstrap core JavaScript-->
+
+    <footer class="footer bg-light text-dark">
+      <div class="container" id="contact">
+        <div class="row">
+          <div class="col-md-6 py-3 my-3">
+            <h5 class="text-primary font-weight-bold">Contact Support</h5>
+            <p>Arbitrage Investments ltd</p>
+            <p class="text-dark">
+              +256 708531101 <br />
+              +256 781050759
+            </p>
+          </div>
+
+          <div class="col-md-6 py-3 my-3">
+            <h2 class="text-dark">Join our Newsletter</h2>
+            <form action="">
+              <input
+                type="text"
+                placeholder="Your email"
+                class="form-control mb-3" />
+              <input type="submit" class="btn btn-danger btn" />
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2023 Arbitrage Investments ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+  </body>
+</html>
