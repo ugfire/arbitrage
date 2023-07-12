@@ -3,3 +3,28 @@
   background-size: cover;
   background-position: center;
 }
+
+.activeservice {
+  text-decoration: none !important;
+  text-decoration: underline !important;
+  color: rgb(5, 122, 211) !important;
+}
+
+.inactiveservice {
+  text-decoration: none !important;
+  color: rgb(76, 76, 76) !important;
+}
+
+.serviceitem {
+  border-bottom: 1px solid #a7a7a7;
+  padding: 10px 20px !important;
+  margin-bottom: 3px !important;
+  list-style-type: none;
+}
+.serviceitem a {
+  width: 100%;
+  padding: 5px;
+}
+.serviceitem a:hover {
+  background-color: rgb(255, 243, 149) !important;
+}
