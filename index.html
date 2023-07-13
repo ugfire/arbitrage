@@ -65,34 +65,64 @@
             function contact() {
               Swal.fire({
                 html: `
-          <h2 class="gtitle">Contact Support</h2>
-          <div class="m-1">
-            <img src="images/support.png" class="img-fluid" width="200px">
-            <div class="m-2">
-            <p class="text-dark">
-              <a
-                href="https://wa.me/+256708531101 "
-                target="_blank" class="btn  btn-success"
-                rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp text-light"></i> +256708531101 
-              </a>
-              <br> +256 781050759 <br>
-              <a
-                href="mailto:info@aabitrage.com "
-                target="_blank" class="btn  btn-danger"
-                rel="noopener noreferrer">
-                <i class="fa fa-solid fa-envelope text-light"></i> info@aabitrage.com
-              </a>
-              </p>
-              
-              <button class="btn-success d-none btn-lg m-2 btn w-50 text-center" onclick="Login()"><i class="fa-brands fa-whatsapp"></i>Send Whatsapp</button>
-            </div>
+                <div class="contactform">
+      <h2 class="gtitle">Contact Support</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="m-2 shadow">
+            <img src="images/support.png" class="img-fluid" />
           </div>
+        </div>
+        <div class="col-md-8">
+          <p class="text-dark">
+            <a
+              href="https://wa.me/+256708531101 "
+              target="_blank"
+              class="btn btn-success"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp text-light"></i> +256708531101
+            </a>
+            <br />
+            +256 781050759 <br />
+            <a
+              href="mailto:info@aabitrage.com "
+              target="_blank"
+              class="btn btn-danger"
+              rel="noopener noreferrer">
+              <i class="fa fa-solid fa-envelope text-light"></i>
+              info@aabitrage.com
+            </a>
+          </p>
+
+          <button
+            class="btn-success d-none btn-lg m-2 btn w-50 text-center"
+            onclick="Login()">
+            <i class="fa-brands fa-whatsapp"></i>Send Whatsapp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <h3>Send Us a Message</h3>
+      <form id="orderForm" class="my-3">
+                        
+                        <input type="text" id="smsname" class="input p-1 w-100" placeholder="Your Name" ><br><br>
+                        
+                        
+                        <input type="text" id="smsphone" class="input p-1 w-100" placeholder="Your Phone/ Email" >
+                        
+                        <textarea type="text" class="input messagearea"  id="typedmessage" wrap="soft" placeholder="Enter your message"  ></textarea>
+                      </form>
+      </div>
         `,
                 allowOutsideClick: true,
                 allowEscapeKey: true,
                 showCloseButton: true,
-                showConfirmButton: false,
+                cancelButtonText: "Cancel",
+                confirmButtonText: "Send Message",
+                showCancelButton: true,
+                showConfirmButton: true,
                 icon: "none",
               });
             }
@@ -132,9 +162,86 @@
         }, 15000); // Delay the popup for 30 seconds (30000 milliseconds)
       });
     </script>-------->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function showOrderForm() {
+        Swal.fire({
+          title: "Buy Bulk SMS engine",
+          html: `
+                      
+                     <h3 class="text-center py-2">Software Cost: <span class="text-danger">UGX 450,000</span> </h3>
+                     <h3 class="text-center py-2">Cost of each SMS: <span class="text-danger">UGX 40</span> </h3>
+                      <form id="orderForm">
+                        
+                        <input type="text" id="smsname" class="input" placeholder="Your Name" ><br><br>
+                        
+                        
+                        <input type="text" id="smsphone" class="input" placeholder="Your Phone/ Email" >
+                        
+                        <input type="text" hidden class="input"  id="productsms" value="bigezosms" >
+                      </form>
+                    `,
+          cancelButtonText: "Cancel",
+          confirmButtonText: "Place Order",
+          showCancelButton: true,
+          showConfirmButton: true,
 
+          preConfirm: () => {
+            const name = document.getElementById("smsname").value;
+            const phone = document.getElementById("smsphone").value;
+            const product = document.getElementById("productsms").value;
+
+            // Verify inputs
+            if (name.trim() === "" || phone.trim() === "") {
+              Swal.showValidationMessage("Name and Phone are required");
+            } else {
+              // Send data to SheetDB
+              const day = new Date();
+              const options = {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              };
+              const formattedDay = day.toLocaleDateString("en-US", options);
+              const formData = new FormData();
+              formData.append("name", name);
+              formData.append("phone", phone);
+              formData.append("product", product);
+              formData.append("date_sent", formattedDay);
+
+              fetch("https://sheetdb.io/api/v1/wdfq3rd0hnfz4", {
+                method: "POST",
+                body: formData,
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  // Handle success response
+                  console.log("Data sent to SheetDB:", data);
+                  Swal.fire(
+                    "Success",
+                    "Order successful. R.S.V.P +256773913902",
+                    "success"
+                  );
+                })
+                .catch((error) => {
+                  // Handle error
+                  console.error("Error sending data to SheetDB:", error);
+                  Swal.fire(
+                    "Error",
+                    "Failed to place the order. Please try again.",
+                    "error"
+                  );
+                });
+            }
+          },
+        });
+      }
+    </script>
     <!-- Hero Section -->
-    <header class="hero bg-gradient-danger text-white text-center">
+    <header class="hero text-white text-center">
+      <video autoplay loop muted class="video-bg">
+        <source src="images/video.mp4" type="video/mp4" />
+      </video>
       <div class="container">
         <h1 class="display-3 font-weight-bold py-5">Buy or Sell a Business</h1>
         <p class="lead">
@@ -147,7 +254,7 @@
         </p>
         <p class="text-center">No fake accounts, No fake businesses!</p>
         <div class="pb-5">
-          <a class="btn btn-success mr-3 btn-lg" onclick="Create()"
+          <a class="btn btn-danger mr-3 btn-lg" onclick="Create()"
             >Create new account</a
           >
           <a class="btn btn-light btn-lg pl-2 pr-2" onclick="Login()">Login</a>
@@ -262,7 +369,7 @@
       </div>
 
       <div class="py-3 text-center">
-        <a class="btn btn-lg btn-warning" onclick="Login()">See more</a>
+        <a class="btn btn-lg btn-primary" onclick="Login()">See more</a>
       </div>
     </section>
 

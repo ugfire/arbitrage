@@ -55,12 +55,11 @@
   background-color: #f0efed !important;
 }
 
-.hero {
-  background-color: rgba(114, 0, 0, 0.8) !important;
-  background-image: url("../images/herobg.jpg") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.messagearea {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100% !important;
+  padding: 10px !important;
 }
 
 .heroregister {
@@ -77,4 +76,44 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.contactpic {
+  max-width: 100px !important;
+}
+
+.contactform {
+}
+
+.hero {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  background-image: url("../images/video.mp4");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
